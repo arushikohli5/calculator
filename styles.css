@@ -1,0 +1,18 @@
+*,*::after,*::before{
+    box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: normal;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+    background: linear-gradient(to right, #00AAFF, #00FF6C);
+}
+
+.calc_grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+}
