@@ -15,11 +15,15 @@ class calculator{
 
     chooseOperation(operation){}
 
-    number(number){}
+    appendNumber(number){
+        this.currentOperand=number;
+    }
 
     compute(){}
 
-    updateDisplay(){}
+    updateDisplay(){
+        this.currentButtons.innerText=this.currentOperand;
+    }
 }
 const numberButtons=document.querySelectorAll('[data-number]');
 const operationButtons=document.querySelectorAll('[data-operation]');
@@ -31,6 +35,12 @@ const currentButtons=document.querySelectorAll('[data-current]');
 
 const claculator=new calculator(prevButtons,currentButtons);
 
+numberButtons.forEach(button =>{
+    button.addEventListener('click' ,()=>{
+        claculator.appendNumber(button.innerText);
+        calculator.updateDisplay();
+    })
+})
 
 
 
