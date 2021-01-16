@@ -14,7 +14,10 @@ class calculator{
     delete(){}
 
     chooseOperation(operation){
-        if(this.currentOperand=='') return;
+        if(this.currentOperand==='') return;
+        if(this.prevOperand!==''){
+            this.compute();
+        }
         this.operation=operation;
         this.prevOperand=this.currentOperand;
         this.currentOperand='';
@@ -25,7 +28,10 @@ class calculator{
         this.currentOperand=this.currentOperand.toString()+number.toString();
     }
 
-    compute(){}
+    compute(){
+        let computation;
+        const prev=parse
+    }
 
     updateDisplay(){
         this.currentButtons.innerText=this.currentOperand;
@@ -56,6 +62,10 @@ operationButtons.forEach(button =>{
     });
 });
 
+equalButtons.addEventListener('click',button =>{
+    claculator.compute();
+    claculator.updateDisplay();
+})
 
 
 
