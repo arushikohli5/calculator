@@ -42,5 +42,16 @@ body{
     align-items: flex-end;
     flex-direction: column;
     padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
 
+.output .prev{
+    color: rgba(255, 255, 255,.75);
+    font-size: 1.5rem;
+}
+
+.output .current{
+    color: white;
+    font-size: 2.5rem;
 }
