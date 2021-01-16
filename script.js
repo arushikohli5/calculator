@@ -16,7 +16,8 @@ class calculator{
     chooseOperation(operation){}
 
     appendNumber(number){
-        this.currentOperand=number;
+        if(number==='.'&& this.currentOperand.includes('.')) return;
+        this.currentOperand=this.currentOperand.toString()+number.toString();
     }
 
     compute(){}
@@ -27,18 +28,18 @@ class calculator{
 }
 const numberButtons=document.querySelectorAll('[data-number]');
 const operationButtons=document.querySelectorAll('[data-operation]');
-const equalButtons=document.querySelectorAll('[data-equals]');
-const deleteButtons=document.querySelectorAll('[data-delete]');
-const allClearButtons=document.querySelectorAll('[data-ac]');
-const prevButtons=document.querySelectorAll('[data-prev]');
-const currentButtons=document.querySelectorAll('[data-current]');
+const equalButtons=document.querySelector('[data-equals]');
+const deleteButtons=document.querySelector('[data-delete]');
+const allClearButtons=document.querySelector('[data-ac]');
+const prevButtons=document.querySelector('[data-prev]');
+const currentButtons=document.querySelector('[data-current]');
 
 const claculator=new calculator(prevButtons,currentButtons);
 
 numberButtons.forEach(button =>{
     button.addEventListener('click' ,()=>{
-        claculator.appendNumber(button.innerText);
-        calculator.updateDisplay();
+        claculator.appendNumber(button.innerText)
+        claculator.updateDisplay();
     })
 })
 
