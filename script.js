@@ -13,7 +13,12 @@ class calculator{
 
     delete(){}
 
-    chooseOperation(operation){}
+    chooseOperation(operation){
+        if(this.currentOperand=='') return;
+        this.operation=operation;
+        this.prevOperand=this.currentOperand;
+        this.currentOperand='';
+    }
 
     appendNumber(number){
         if(number==='.'&& this.currentOperand.includes('.')) return;
@@ -24,6 +29,7 @@ class calculator{
 
     updateDisplay(){
         this.currentButtons.innerText=this.currentOperand;
+        this.prevButtons.innerText=this.prevOperand;
     }
 }
 const numberButtons=document.querySelectorAll('[data-number]');
@@ -38,12 +44,17 @@ const claculator=new calculator(prevButtons,currentButtons);
 
 numberButtons.forEach(button =>{
     button.addEventListener('click' ,()=>{
-        claculator.appendNumber(button.innerText)
+        claculator.appendNumber(button.innerText);
         claculator.updateDisplay();
-    })
-})
+    });
+});
 
-
+operationButtons.forEach(button =>{
+    button.addEventListener('click' ,()=>{
+        claculator.chooseOperation(button.innerText);
+        claculator.updateDisplay();
+    });
+});
 
 
 
