@@ -30,7 +30,34 @@ class calculator{
 
     compute(){
         let computation;
-        const prev=parse
+        const prev=parseFloat(this.prevOperand);
+        const current=parseFloat(this.currentOperand);
+        if(NaN(prev)||NaN(current))return;
+
+        switch(this.operation){
+            case '+':
+                computation=prev+current;
+                break;
+            
+            case '':
+                computation=prev-current;
+                break;
+
+            case '*':
+                computation=prev*current;
+                break;
+
+            case '/':
+                computation=prev/current;
+                break;
+
+            default:
+                return;
+
+        }
+        this.currentOperand=computation;
+        this.operation=undefined;
+        this.prevOperand='';
     }
 
     updateDisplay(){
