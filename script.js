@@ -32,7 +32,7 @@ class calculator{
         let computation;
         const prev=parseFloat(this.prevOperand);
         const current=parseFloat(this.currentOperand);
-        if(NaN(prev)||NaN(current))return;
+        if(isNaN(prev)||isNaN(current))return;
 
         switch(this.operation){
             case '+':
