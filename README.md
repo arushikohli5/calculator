@@ -1,3 +1,3 @@
 # calculator
 Calculator using javascript.<br>
-Live preview :
+Live preview :https://arushikohli5.github.io/calculator/
