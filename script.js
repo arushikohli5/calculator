@@ -92,7 +92,12 @@ operationButtons.forEach(button =>{
 equalButtons.addEventListener('click',button =>{
     claculator.compute();
     claculator.updateDisplay();
-})
+});
+
+allClearButtons.addEventListener('click',button =>{
+    claculator.clear();
+    claculator.updateDisplay();
+});
 
 
 
