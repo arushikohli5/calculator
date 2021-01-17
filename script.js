@@ -11,7 +11,9 @@ class calculator{
         this.operation=undefined;
     }
 
-    delete(){}
+    delete(){
+        this.currentOperand=this.currentOperand.toString().slice(0,-1);
+    }
 
     chooseOperation(operation){
         if(this.currentOperand==='') return;
@@ -99,6 +101,10 @@ allClearButtons.addEventListener('click',button =>{
     claculator.updateDisplay();
 });
 
+deleteButtons.addEventListener('click',button =>{
+    claculator.delete();
+    claculator.updateDisplay();
+});
 
 
 
